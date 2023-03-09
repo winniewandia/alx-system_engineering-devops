@@ -13,7 +13,7 @@ Group: no permission at all
 Other users: all the permissions
 "chmod 753 hello" sets the mode of hello to -rwxr-x-wx
 "chmod --reference=olleh hello" sets the mode of the file hello the same as olleh’s mode
-"chmod -R a+x .*/" Create a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
+"chmod a+x */" Create a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
 
 Regular files should not be changed.
 
