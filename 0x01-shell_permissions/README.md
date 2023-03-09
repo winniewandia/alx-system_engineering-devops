@@ -11,4 +11,4 @@
 Owner: no permission at all
 Group: no permission at all
 Other users: all the permissions
-
+"chmod 753 hello" sets the mode of hello to -rwxr-x-wx
