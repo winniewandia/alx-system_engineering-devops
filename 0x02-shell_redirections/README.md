@@ -16,6 +16,9 @@ Sorted from the newest to the oldest
 "grep root /etc/passwd" Display lines containing the pattern “root” from the file /etc/passwd
 "grep -c bin /etc/passwd" Display the number of lines that contain the pattern “bin” in the file /etc/passwd
 "grep root /etc/passwd -A 3" Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.
-"grep -v bin /etc/passwd" Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
+"grep -v bin /etc/passwd" Display all the lines in the file /etc/passwd that do not contain the pattern “bin"
+"grep '^[[:alpha:]]' /etc/ssh/sshd_config" Display all lines of the file /etc/ssh/sshd_config starting with a letter.
+
+include capital letters as well
 
 
