@@ -43,4 +43,6 @@ The listing should end with a new line
 "echo $(cut -c1 | tr -d " \n")" a script that decodes acrostics that use the first letter of each line.
 
 The ‘decoded’ message has to end with a new line
+"tail -n +2 | sort | cut -f1 | uniq -c | sort -g -r | head -11 | tr -s " " | cut -d" " -f3" a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
 
+Order by number of requests, most active host or IP at the top
