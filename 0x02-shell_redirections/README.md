@@ -26,5 +26,11 @@ include capital letters as well
 "cut -f1,6 -d: /etc/passwd | sort" displays all users and their home directories, sorted by users.
 
 Based on the the /etc/passwd file
+"find . -empty -printf "%f\n"" a command that finds all empty files and directories in the current directory and all sub-directories.
+
+Only the names of the files and directories should be displayed (not the entire path)
+Hidden files should be listed
+One file name per line
+The listing should end with a new line
 
 
