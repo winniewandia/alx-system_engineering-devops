@@ -22,5 +22,6 @@ Sorted from the newest to the oldest
 include capital letters as well
 "tr A Z | tr c e" Replace all characters A and c from input to Z and e respectively.
 "tr -d 'c' | tr -d 'C'" Create a script that removes all letters c and C from input.
+"rev" reverse its input
 
 
