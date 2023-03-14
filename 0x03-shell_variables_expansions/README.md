@@ -6,3 +6,5 @@ Value: rm *
 "PATH=$PATH:/action" Add /action to the PATH. 
 "echo $PATH | tr -s ":" "\n" | wc -l" counts the number of directories in the PATH
 "printenv"  lists environment variables
+"set" lists all local variables and environment variables, and functions
+
