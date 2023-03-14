@@ -11,4 +11,8 @@ Value: rm *
 
 Name: BEST
 Value: School
+"export BEST="School"" creates a new global variable.
+
+Name: BEST
+Value: School
 
