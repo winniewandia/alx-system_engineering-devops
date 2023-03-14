@@ -37,4 +37,5 @@ The number will be stored in the environment variable NUM
 
 The number in base 10 is stored in the environment variable DECIMAL
 "tr '[A-Za-z]' '[N-ZA-Mn-za-m]'" a script that encodes and decodes text using the rot13 encryption. Assume ASCII
+"paste - - | cut -f 1" prints every other line from the input, starting with the first line
 
