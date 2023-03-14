@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%x\n" $WATER $STIR | echo "$((bestchol#$((WATER+STIR))))
+echo "(($bestchol#$((water#WATER+$((stir#STIR))))))
