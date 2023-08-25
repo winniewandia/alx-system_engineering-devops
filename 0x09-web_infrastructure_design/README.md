@@ -17,3 +17,9 @@ Tasks
 - 1 load-balancer (HAproxy)
 - 1 set of application files (your code base)
 - 1 database (MySQL)
+
+2. Secured and monitored web infrastructure
+
+- 3 firewalls
+- 1 SSL certificate to serve www.foobar.com over HTTPS
+- 3 monitoring clients (data collector for Sumologic or other monitoring services)
