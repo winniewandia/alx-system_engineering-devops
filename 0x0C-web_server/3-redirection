@@ -4,7 +4,7 @@ apt-get -y update
 apt-get -y install nginx
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 new_location_block="location /redirect_me {
-    return 301 https://github.com/winniewandia;
+    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
 }"
 nginx_config_file="/etc/nginx/sites-available/default"
 sed -i '/}/i '"$new_location_block" "$nginx_config_file"
