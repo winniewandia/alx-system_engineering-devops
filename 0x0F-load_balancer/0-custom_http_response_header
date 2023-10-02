@@ -4,16 +4,6 @@ apt-get -y update
 apt-get -y install nginx
 echo "Hello World" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page\n" > /var/www/html/custom_404.html
-# filename="/etc/nginx/sites-available/default"
-# text_to_insert="\
-#     error_page 404 /custom_404.html;\n\
-#     location = /custom_404.html {\n\
-#         root /var/www/html;\n\
-#         internal;\n\
-#     }\n\
-#     location /redirect_me {\n\
-#         return 301 https://github.com/winniewandia;\n\
-#     }"
 sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/winniewandia permanent;\n\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}/" /etc/nginx/sites-available/default
-sed -i '/^    location \/ {/a \        add_header X-Served-By $hostname;' "$filename"
+sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By \"$hostname\";/" /etc/nginx/nginx.conf
 service nginx start
