@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Function to query DNS records for a subdomain
 query_dns() {
   local subdomain="$1"
