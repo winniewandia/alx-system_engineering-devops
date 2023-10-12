@@ -1,47 +1,16 @@
 #!/usr/bin/env bash
-# Function to query DNS records for a subdomain
-query_dns() {
-  local subdomain="$1"
-  local domain="$2"
-  local record_type="$3"
-  dig +short "$subdomain.$domain" "$record_type" | awk '{ print $1 }'
+# Script that displays information about subdomains.
+
+func () {
+    if [ -n "$2" ]
+    then
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | paste - - | awk -v sd="$2" '{print "The subdomain " sd " is a " $7 " record and points to " $8}'
+    else
+	dig "www.$1" | grep -A1 'ANSWER SECTION:' | paste - - | awk '{print "The subdomain www is a " $7 " record and points to " $8}'
+	dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | paste - - | awk '{print "The subdomain lb-01 is a " $7 " record and points to " $8}'
+	dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | paste - - | awk '{print "The subdomain web-01 is a " $7 " record and points to " $8}'
+	dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | paste - - | awk '{print "The subdomain web-02 is a " $7 " record and points to " $8}'
+    fi
 }
 
-# Function to display information about a subdomain
-display_subdomain_info() {
-  local subdomain="$1"
-  local domain="$2"
-  local record_type="$3"
-  local destination="$4"
-  echo "The subdomain $subdomain is a $record_type record and points to $destination"
-}
-
-# Main script
-main() {
-  local domain="$1"
-  local subdomain="$2"
-
-  # Default subdomains
-  subdomains=("www" "lb-01" "web-01" "web-02")
-
-  # Check if a specific subdomain is provided
-  if [ -n "$subdomain" ]; then
-    record_type=$(query_dns "$subdomain" "$domain" "CNAME")
-    destination=$(query_dns "$subdomain" "$domain" "A")
-    display_subdomain_info "$subdomain" "$domain" "$record_type" "$destination"
-  else
-    for sub in "${subdomains[@]}"; do
-      record_type=$(query_dns "$sub" "$domain" "CNAME")
-      destination=$(query_dns "$sub" "$domain" "A")
-      display_subdomain_info "$sub" "$domain" "$record_type" "$destination"
-    done
-  fi
-}
-
-# Check if the script is called with the correct number of arguments
-if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
-  echo "Usage: $0 <domain> [subdomain]"
-  exit 1
-fi
-
-main "$@"
+func "$1" "$2"

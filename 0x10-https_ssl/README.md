@@ -1,1 +1,1 @@
-0. World wide web
+0. Information about the domain and subdomains
