@@ -46,4 +46,4 @@ frontend www-https
 backend mybackend
         balance roundrobin
         server 330491-web-01 107.23.108.17:80 check
-        server 330491-web-02 54.159.22.170:80 check
+        server 330491-web-02 54.173.67.231:80 check
