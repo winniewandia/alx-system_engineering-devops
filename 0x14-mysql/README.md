@@ -8,4 +8,5 @@
    FLUSH PRIVILEGES;
    GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
 
-4.
+4. setting up a primary-replica infrastructure using MySQL
+5. Generating a mysql dump and creating a compressed archive out of it
