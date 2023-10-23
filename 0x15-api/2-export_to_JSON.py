@@ -21,7 +21,8 @@ if __name__ == '__main__':
     for i in response:
         if i['userId'] == int(sys.argv[1]):
             employee_dict = {
-                "task": i['title'], "completed": i['completed'], "username": name}
+                "task": i['title'], "completed": i['completed'],
+                "username": name}
             task_list.append(employee_dict)
 
     dict_task = {str(name_id): task_list}
