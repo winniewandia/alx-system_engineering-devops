@@ -16,7 +16,7 @@ if __name__ == '__main__':
     name = None
     for j in users_response:
         if j['id'] == int(sys.argv[1]):
-            name = j['name']
+            name = j['username']
     task_list = []
     for i in response:
         if i['userId'] == int(sys.argv[1]):
