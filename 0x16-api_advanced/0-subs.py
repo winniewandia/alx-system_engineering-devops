@@ -1,8 +1,18 @@
 #!/usr/bin/python3
+"""Module to get the number of subscribers
+"""
 import requests
 
 
 def number_of_subscribers(subreddit):
+    """Gets number of subscribers by querying an API
+
+    Args:
+        subreddit: subredit to be searched
+
+    Returns:
+        Number of subscribers
+    """
     user_agent = 'Mozilla/5.0'
     headers = {
         'User-Agent': user_agent
